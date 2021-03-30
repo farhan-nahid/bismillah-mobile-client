@@ -1,0 +1,25 @@
+.icon {
+  text-align: center;
+  height: 47px;
+  cursor: pointer;
+  font-size: 18px;
+  width: 415px;
+  background: #000;
+  font-weight: 500;
+  position: relative;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid #c7c7c7;
+  box-sizing: border-box;
+  border-radius: 57px;
+  margin-bottom: 20px;
+  line-height: 51px;
+}
+
+.icon img {
+  height: 37px;
+  position: absolute;
+  left: 6%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
