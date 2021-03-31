@@ -12,7 +12,7 @@ const OrderCheckout = () => {
 //  console.log(name, price);
   
     useEffect(()=>{
-        const url= `http://localhost:5000/mobile/${id}`
+        const url= `https://bismillah-phone-farhan.herokuapp.com/mobile/${id}`
      //   console.log(url);
         fetch(url)
         .then(res => res.json())
