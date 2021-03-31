@@ -1,11 +1,10 @@
 ## Bismillah Mobile Zone
 
- ##about this site
+ -> about this site
 
 - If you want to buy mobile at first you need login
 - User and Admin can sign up and log in to this website using google facebook & email.
 - Admin can add more mobile
--  
 
 ### Front-end Technology:
 
@@ -17,6 +16,7 @@
 - React-hook-form
 - Axios
 - React-router-dom
+- Firebase-Authentication
 
 ### Back-end Technology:
 
@@ -24,7 +24,7 @@
 - Express JS
 - MongoDB
 
-### Tools
+### Tools:
 
 - dotenv
 - git
