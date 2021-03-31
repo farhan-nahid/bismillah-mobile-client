@@ -29,9 +29,6 @@ function App() {
               <PrivateRoute path= "/mobile/:id">
                   <OrderCheckout />
               </PrivateRoute>
-              <PrivateRoute path= "/mobile/:id">
-                  <OrderCheckout />
-              </PrivateRoute>
               <PrivateRoute path= "/adminPanel">
                 <AdminPanel />
               </PrivateRoute>

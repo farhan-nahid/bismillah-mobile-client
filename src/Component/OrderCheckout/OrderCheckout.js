@@ -1,25 +1,42 @@
 import { useEffect, useState } from 'react';
+import { Container, Table } from 'react-bootstrap';
 import { useParams } from 'react-router';
 
 const OrderCheckout = () => {
     
     const {id} = useParams()
-  //  console.log(id);
-  const[orderCheckout, setOrderCheckout] = useState([]);
-
+ // console.log(id);
+  const [orderCheckout, setOrderCheckout] = useState([]);
+ // console.log(orderCheckout);
+  const {name, price} =orderCheckout;
+//  console.log(name, price);
+  
     useEffect(()=>{
-        const url= `http://localhost:5000/mobileItems/${id}`
-        console.log(url);
+        const url= `http://localhost:5000/mobile/${id}`
+     //   console.log(url);
         fetch(url)
         .then(res => res.json())
         .then(data => setOrderCheckout(data))
-    },[])
+    },[id])
     return (
-        <div>
-            {
-                orderCheckout.map(order => <li>{order.name}</li>)
-            }
-        </div>
+        <Container className="mt-5">
+            <Table bordered hover size="sm">
+            <thead>
+                <tr>
+                    <th>Mobile Name</th>
+                    <th>Quantity</th>
+                    <th>Prize</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{name}</td>
+                    <td>Mark</td>
+                    <td>{price}</td>
+                </tr>
+            </tbody>
+            </Table>
+        </Container>
     );
 };
 
