@@ -3,12 +3,15 @@ import {
   BrowserRouter as Router,
   Route, Switch
 } from "react-router-dom";
+import AdminAddMobile from "./Component/AdminAddMobile/AdminAddMobile";
 import AdminPanel from "./Component/AdminPanel/AdminPanel";
 import Header from "./Component/Header/Header";
 import Home from "./Component/Home/Home";
 import Login from "./Component/Login/Login";
+import ManageMobile from "./Component/ManageMobile/ManageMobile";
 import NotFound from "./Component/NotFound/NotFound";
 import OrderCheckout from "./Component/OrderCheckout/OrderCheckout";
+import PrivateRoute from "./Component/PrivateRoute/PrivateRoute";
 
 export const UserContext = createContext ();
 
@@ -23,15 +26,21 @@ function App() {
               <Route path='/home'>
                 <Home />
               </Route>
-              <Route path= "/product:id">
+              <PrivateRoute path= "/mobile/:id">
                   <OrderCheckout />
-              </Route>
-              {/* <Route path= "/orderedProduct">
-                <OrderedProduct />
-              </Route> */}
-              <Route path= "/adminPanel">
+              </PrivateRoute>
+              <PrivateRoute path= "/mobile/:id">
+                  <OrderCheckout />
+              </PrivateRoute>
+              <PrivateRoute path= "/adminPanel">
                 <AdminPanel />
-              </Route>
+              </PrivateRoute>
+              <PrivateRoute path= "/manageMobile">
+                <ManageMobile />
+              </PrivateRoute>
+              <PrivateRoute path="/adminAddMobile">
+                <AdminAddMobile />
+              </PrivateRoute>
               <Route path="/login">
                 <Login />
               </Route>

@@ -1,11 +1,23 @@
 import React from 'react';
-import AdminAddProduct from '../AdminAddProduct/AdminAddProduct';
+import { Container, Row } from 'react-bootstrap';
+import SideBar from '../SideBar/SideBar';
+import './AdminPanel.css';
+
+
 
 const AdminPanel = () => {
     return (
-        <div>
-            <AdminAddProduct />
-        </div>
+        <Container>
+            <Row className="mt-4">
+                <div className="col-md-3">
+                    <SideBar />
+                </div>
+
+                <div className="col-md-9">
+                    
+                </div>
+            </Row>
+        </Container>
     );
 };
 

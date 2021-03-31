@@ -1,75 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import Mobile from '../Mobile/Mobile';
 import './Home.css';
+import spinner from './img/loader.gif';
 
 const Home = () => {
 
-    const products = [
-        {
-            name: 'Child Support',
-            img: 'https://i.ibb.co/Z8NWSTW/stuffed-Animals.png',
-            price:"111"
-        },
-        {
-            name: 'Animal Shelter',
-            img: 'https://i.ibb.co/YX0WJ3K/study-Group.png',
-            price:"111"
-        },
-        {
-            name: 'Bird House',
-            img: 'https://i.ibb.co/dLqpwpz/school-Suffiles.png',
-            price:"111"
-        },
-        {
-            name: 'Good Student',
-            img: 'https://i.ibb.co/Qjqj1q1/river-Clean.png',
-            price:"111"
-        },
-        {
-            name: 'Food Charity',
-            img: 'https://i.ibb.co/GR0cXtV/refuse-Shelter.png',
-            price:"111"
-        },
-        {
-            name: 'Food Charity',
-            img: 'https://i.ibb.co/vvRMXND/newBooks.png',
-            price:"111"
-        },
-        {
-            name: 'Food Charity',
-            img: 'https://i.ibb.co/Nrj839G/music-Lessons.png',
-            price:"111"
-        },
-         {
-            name: 'Good Student',
-            img: 'https://i.ibb.co/Qjqj1q1/river-Clean.png',
-            price:"111"
-        },
-        {
-            name: 'Food Charity',
-            img: 'https://i.ibb.co/GR0cXtV/refuse-Shelter.png',
-            price:"111"
-        },
-        {
-            name: 'Food Charity',
-            img: 'https://i.ibb.co/vvRMXND/newBooks.png',
-            price:"111"
-        },
-        {
-            name: 'Food Charity',
-            img: 'https://i.ibb.co/Nrj839G/music-Lessons.png',
-            price:"111"
-        },
-        {
-            name: 'Food Charity',
-            img: 'https://i.ibb.co/ky13rkD/ITHelp.png',
-            price:"111"
-        }
-    ]
+    const [mobiles, setMobiles] = useState([])
+    console.log(mobiles);
 
-
-
+    useEffect(()=>{
+        fetch(`http://localhost:5000/mobileItems`)
+        .then (res => res.json())
+        .then(data => setMobiles(data))
+    },[])
 
     return (
         <Container>
@@ -79,7 +23,8 @@ const Home = () => {
             </div>
             <Row>
                 {
-                    products.map(product  => <Mobile product={product} />)
+                    mobiles.length >0 ?mobiles.map(mobile  => <Mobile key={mobile._id}  mobile={mobile} />) 
+                    :<img className="text-center m-auto" style={{width:'30%'}} src={spinner} alt=""/>   
                 }
             </Row>
         </Container>
@@ -87,3 +32,4 @@ const Home = () => {
 };
 
 export default Home;
+

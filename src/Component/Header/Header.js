@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../App';
 
 const Header = () => {
+    const [loggedInUser, setLoggedInUser, ] = useContext(UserContext);
+    const {id,name} = loggedInUser;
     return (
         <Navbar bg="light" expand="lg">
             <div className="container">
@@ -14,7 +17,11 @@ const Header = () => {
                                 <Nav.Link as={Link} to="/orderedProduct">Orders</Nav.Link> 
                                 <Nav.Link as={Link} to="/adminPanel">Admin</Nav.Link>
                                 <Nav.Link as={Link} to="/deals">Deals</Nav.Link> 
-                                <Button variant="success" as={Link} to="/login" className="btn btn-success" >Log In</Button>   
+                                {
+                                     loggedInUser.name|| loggedInUser.email
+                                     ?<Nav.Link >{name}</Nav.Link>
+                                     : <Button variant="success" as={Link} to="/login" className="btn btn-success" >Log In</Button>  
+                                }
                             </Nav>  
                         </Navbar.Collapse>
              </div>
