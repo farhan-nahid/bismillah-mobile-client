@@ -26,6 +26,8 @@ const AdminAddMobile = () => {
       })
       .then(res=>console.log("server site", res))
     };
+
+
     const handleImageUpload = event =>{
       console.log(event.target.files[0]);
       const imageData = new FormData();
@@ -40,6 +42,8 @@ const AdminAddMobile = () => {
         console.log(error);
       });
     }
+
+    
     return (
       <Container>
         <Row className="mt-4"> 
