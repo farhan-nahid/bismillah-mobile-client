@@ -5,12 +5,14 @@ import {
 } from "react-router-dom";
 import AdminAddMobile from "./Component/AdminAddMobile/AdminAddMobile";
 import AdminPanel from "./Component/AdminPanel/AdminPanel";
+import Footer from "./Component/Footer/Footer";
 import Header from "./Component/Header/Header";
 import Home from "./Component/Home/Home";
 import Login from "./Component/Login/Login";
 import ManageMobile from "./Component/ManageMobile/ManageMobile";
 import NotFound from "./Component/NotFound/NotFound";
 import OrderCheckout from "./Component/OrderCheckout/OrderCheckout";
+import OrderedMobile from "./Component/OrderedMobile/OrderedMobile";
 import PrivateRoute from "./Component/PrivateRoute/PrivateRoute";
 
 export const UserContext = createContext ();
@@ -28,6 +30,9 @@ function App() {
               </Route>
               <PrivateRoute path= "/mobile/:id">
                   <OrderCheckout />
+              </PrivateRoute>
+              <PrivateRoute path= "/orders">
+                <OrderedMobile />
               </PrivateRoute>
               <PrivateRoute path= "/adminPanel">
                 <AdminPanel />
@@ -48,6 +53,7 @@ function App() {
                 <NotFound />
               </Route>
             </Switch>
+            <Footer />
         </Router>
     </UserContext.Provider>
   );

@@ -1,0 +1,13 @@
+.order {
+  border: 1px solid lightgray;
+  padding: 10px;
+  border-radius: 20px;
+  display: flex;
+  margin-top: 20px;
+}
+
+.img img {
+  height: 150px;
+  width: 150px;
+  object-fit: contain;
+}

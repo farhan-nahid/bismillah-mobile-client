@@ -15,7 +15,7 @@ const AdminAddMobile = () => {
         price:data.price,
         image: imageURL
       }
-      const url='https://bismillah-phone-farhan.herokuapp.com/adminAddMobile'
+      const url='http://localhost:5000/adminAddMobile'
       console.log(mobileData)
       fetch(url,{
         method: 'POST',

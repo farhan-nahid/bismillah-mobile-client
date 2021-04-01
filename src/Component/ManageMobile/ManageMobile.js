@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row, Table } from 'react-bootstrap';
+import ManageMobileTable from '../ManageMobileTable/ManageMobile';
 import SideBar from '../SideBar/SideBar';
 
 const ManageMobile = () => {
+
+    const [mobile, setMobile] = useState([])
+      console.log(mobile);
+  
+      useEffect(()=>{
+          fetch(`http://localhost:5000/mobileItems`)
+          .then (res => res.json())
+          .then(data => setMobile(data))
+      },[])
+
     return (
         <Container>
             <Row className="mt-4">
@@ -20,15 +31,10 @@ const ManageMobile = () => {
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                    </tbody>
-                    </Table>
+                    {
+                        mobile.map(mobile =>  <ManageMobileTable mobile={mobile} />)
+                    }
+               </Table>
                 </div>
             </Row>
             

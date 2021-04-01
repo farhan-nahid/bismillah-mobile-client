@@ -10,7 +10,7 @@ const Home = () => {
   //  console.log(mobiles);
 
     useEffect(()=>{
-        fetch(`https://bismillah-phone-farhan.herokuapp.com/mobileItems`)
+        fetch(`http://localhost:5000/mobileItems`)
         .then (res => res.json())
         .then(data => setMobiles(data))
     },[])
@@ -24,7 +24,7 @@ const Home = () => {
             <Row>
                 {
                     mobiles.length >0 ?mobiles.map(mobile  => <Mobile key={mobile._id}  mobile={mobile} />) 
-                    :<img className="text-center m-auto" style={{width:'30%'}} src={spinner} alt=""/>   
+                    :<img style={{width:'30%'}} className="text-center m-auto" src={spinner} alt=""/>   
                 }
             </Row>
         </Container>
@@ -32,4 +32,3 @@ const Home = () => {
 };
 
 export default Home;
-
