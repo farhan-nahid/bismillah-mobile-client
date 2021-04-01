@@ -23,7 +23,7 @@ const ManageMobile = ({mobile}) => {
                 <td>{name}</td>
                 <td>{configuration}</td>
                 <td>{price}</td>
-                <td> <img  style={{width:"25px", height:"25px"}} onClick={(event)=>handleDelete(_id,event)} src={remove} alt=".." /> </td>
+                 <img  style={{width:"25px", height:"25px"}} onClick={(event)=>handleDelete(_id,event)} src={remove} alt=".." /> 
             </tr>
         </tbody>
         
