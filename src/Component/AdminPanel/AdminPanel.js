@@ -1,9 +1,6 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import SideBar from '../SideBar/SideBar';
-import './AdminPanel.css';
-
-
 
 const AdminPanel = () => {
     return (
