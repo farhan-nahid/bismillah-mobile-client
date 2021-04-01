@@ -17,9 +17,9 @@ const OrderedMobile = () => {
         <Container className="mt-5">
             <Row>
                 {
-                    orderedMobile > 0 ? orderedMobile.map(order => <SingleOrder  order={order}/> )
-                    :<img style={{width:'30%'}} className="text-center m-auto" src={spinner} alt=""/>    
-                }
+                    orderedMobile.length > 0 ? orderedMobile.map(order => <SingleOrder  order={order}/> )
+                    :<img style={{width:'30%'}} className="text-center m-auto" src={spinner} alt="..."/>                
+                }    
             </Row>
         </Container>
     );
