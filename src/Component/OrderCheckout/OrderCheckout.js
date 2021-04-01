@@ -55,14 +55,13 @@ const OrderCheckout = () => {
             <tbody>
                 <tr>
                     <td>{name}</td>
-                    <td>1</td>
+                    <td> 1 </td>
                     <td>{price}</td>
                 </tr>
             </tbody>
             </Table>
             <Button  variant="success"  className=" mt-4 justify-content-center" onClick ={handleOrderCheckout}>Checkout</Button>
             </div>
-           
         </Container>
     );
 };

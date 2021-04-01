@@ -4,22 +4,11 @@
   box-shadow: 10px 10px 10px 2px gray;
 }
 
-.name {
-  margin-right: 20px;
-}
-
-.file {
-  margin-left: 20px;
-}
-
 .submit {
   width: 70px;
   padding: 6px;
   background-color: #28a745;
   border: 0;
   color: white;
-}
-
-input {
-  width: 350px;
+  margin-top: 20px;
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import remove from "./img/delete.png";
 
-const ManageMobile = ({mobile}) => {
+const ManageMobileTable = ({mobile}) => {
     const {name, configuration, price,_id} = mobile
 
     const handleDelete = (id,event) => {
@@ -23,11 +23,11 @@ const ManageMobile = ({mobile}) => {
                 <td>{name}</td>
                 <td>{configuration}</td>
                 <td>{price}</td>
-                 <img  style={{width:"25px", height:"25px"}} onClick={(event)=>handleDelete(_id,event)} src={remove} alt=".." /> 
+                 <img style={{width:"25px", height:"25px"}} onClick={(event)=>handleDelete(_id,event)} src={remove} alt=".." /> 
             </tr>
         </tbody>
         
     );
 };
 
-export default ManageMobile;
+export default ManageMobileTable;

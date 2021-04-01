@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import SideBar from '../SideBar/SideBar';
 import './AdminPanel.css';
 
@@ -9,13 +9,13 @@ const AdminPanel = () => {
     return (
         <Container>
             <Row className="mt-4">
-                <div className="col-md-3">
+                <Col md={3} xs={4}>
                     <SideBar />
-                </div>
+                </Col>
 
-                <div className="col-md-9">
+                <Col md={9} xs={8}>
                     
-                </div>
+                </Col>
             </Row>
         </Container>
     );

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import SideBar from '../SideBar/SideBar';
 import './AdminAddMobile.css';
@@ -43,20 +43,25 @@ const AdminAddMobile = () => {
     return (
       <Container>
         <Row className="mt-4"> 
-            <div className="col-md-3">
+            <Col md={3} xs={4}>
               <SideBar />
-            </div>
-       <div className="col-md-9 ">
-          <form onSubmit={handleSubmit(onSubmit)} className="submit-area p-5">
-            <input name="name" placeholder="Mobile Name" className="name" ref={register} />
-            <input name="configuration" placeholder="Configuration" ref={register} /> <br/> <br/>
-            <input name="price" placeholder="Mobile Price" type="number" ref={register} />
-            <input name="image" className="file"  type='file'  onChange={handleImageUpload}/> <br/> <br/>
-            <input type="submit"  className="submit "  />
-        </form>
-       </div>
-       </Row>
-       </Container>
+            </Col>
+            <Col md={9} xs={8}>
+                <form onSubmit={handleSubmit(onSubmit)} className="submit-area p-5">
+                    <div className="input d-flex  justify-content-between">
+                      <input name="name" placeholder="Mobile Name" className="form-control" ref={register} />
+                      <input name="configuration" placeholder="Configuration"  className="form-control"  ref={register} /> 
+                    </div>
+
+                    <div className="input d-flex mt-4">
+                        <input name="price" placeholder="Mobile Price" className="form-control" type="number" ref={register} />
+                        <input name="image" type='file' className="form-control" onChange={handleImageUpload}/>      
+                      </div>
+                  <input type="submit"  className="submit"  />
+              </form>
+            </Col>
+         </Row>
+      </Container>
     );
 };
 
