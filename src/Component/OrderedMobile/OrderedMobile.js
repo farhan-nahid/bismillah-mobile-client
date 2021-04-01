@@ -6,7 +6,7 @@ import SingleOrder from '../SingleOrder.js/SingleOrder';
 const OrderedMobile = () => {
     const [orderedMobile, setOrderedMobile] = useState([]);
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
-   // console.log(orderedMobile);
+    
     useEffect(()=>{
         fetch('https://bismillah-phone-farhan.herokuapp.com/orders?email='+loggedInUser.email)
         .then(res => res.json())

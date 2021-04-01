@@ -7,7 +7,6 @@ import SideBar from '../SideBar/SideBar';
 const ManageMobile = () => {
 
     const [mobile, setMobile] = useState([])
-      console.log(mobile);
   
       useEffect(()=>{
           fetch(`https://bismillah-phone-farhan.herokuapp.com/mobileItems`)

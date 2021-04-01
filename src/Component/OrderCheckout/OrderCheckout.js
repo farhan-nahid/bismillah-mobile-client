@@ -26,6 +26,7 @@ const OrderCheckout = () => {
 
     const handleOrderCheckout = () => {
         const newOrder = {...loggedInUser, ...orderCheckout}
+        delete newOrder._id
         console.log(newOrder);
         fetch('https://bismillah-phone-farhan.herokuapp.com/orderCheckout', {
             method : 'POST',

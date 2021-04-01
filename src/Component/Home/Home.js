@@ -7,7 +7,6 @@ import spinner from './img/loader.gif';
 const Home = () => {
 
     const [mobiles, setMobiles] = useState([])
-  //  console.log(mobiles);
 
     useEffect(()=>{
         fetch(`https://bismillah-phone-farhan.herokuapp.com/mobileItems`)
