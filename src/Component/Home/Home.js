@@ -22,7 +22,7 @@ const Home = () => {
             </div>
             <Row>
                 {
-                    mobiles.length >0 ?mobiles.map(mobile  => <Mobile key={mobile._id}  mobile={mobile} />) 
+                    mobiles.length > 0 ? mobiles.map(mobile  => <Mobile key={mobile._id}  mobile={mobile} />) 
                     :<img style={{width:'30%'}} className="text-center m-auto" src={spinner} alt=""/>   
                 }
             </Row>

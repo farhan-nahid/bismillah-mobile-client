@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import { UserContext } from '../../App';
-import SingleOrder from '../SingleOrder.js/SingleOrder';
+import spinner from '../Home/img/loader.gif';
+import SingleOrder from '../SingleOrder/SingleOrder';
 
 const OrderedMobile = () => {
     const [orderedMobile, setOrderedMobile] = useState([]);
@@ -16,7 +17,8 @@ const OrderedMobile = () => {
         <Container className="mt-5">
             <Row>
                 {
-                    orderedMobile.map(order => <SingleOrder  order={order}/> )
+                    orderedMobile > 0 ? orderedMobile.map(order => <SingleOrder  order={order}/> )
+                    :<img style={{width:'30%'}} className="text-center m-auto" src={spinner} alt=""/>    
                 }
             </Row>
         </Container>
