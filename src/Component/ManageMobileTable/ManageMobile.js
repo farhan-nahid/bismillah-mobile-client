@@ -6,7 +6,7 @@ const ManageMobile = ({mobile}) => {
 
     const handleDelete = (id) => {
         console.log(id);
-        fetch(`http://localhost:5000/delete/${id}`,{
+        fetch(`https://bismillah-phone-farhan.herokuapp.com/delete/${id}`,{
             method : 'DELETE'
         })
         .then(res => res.json())

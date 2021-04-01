@@ -10,7 +10,7 @@ const Home = () => {
   //  console.log(mobiles);
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/mobileItems`)
+        fetch(`https://bismillah-phone-farhan.herokuapp.com/mobileItems`)
         .then (res => res.json())
         .then(data => setMobiles(data))
     },[])

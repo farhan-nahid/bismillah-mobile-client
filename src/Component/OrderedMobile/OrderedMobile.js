@@ -8,7 +8,7 @@ const OrderedMobile = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
    // console.log(orderedMobile);
     useEffect(()=>{
-        fetch('http://localhost:5000/orders?email='+loggedInUser.email)
+        fetch('https://bismillah-phone-farhan.herokuapp.com/orders?email='+loggedInUser.email)
         .then(res => res.json())
         .then(data => setOrderedMobile(data))
     },[])

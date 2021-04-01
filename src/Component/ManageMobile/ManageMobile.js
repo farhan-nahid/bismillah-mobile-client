@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Table } from 'react-bootstrap';
+import spinner from '../Home/img/loader.gif';
 import ManageMobileTable from '../ManageMobileTable/ManageMobile';
 import SideBar from '../SideBar/SideBar';
 
@@ -9,7 +10,7 @@ const ManageMobile = () => {
       console.log(mobile);
   
       useEffect(()=>{
-          fetch(`http://localhost:5000/mobileItems`)
+          fetch(`https://bismillah-phone-farhan.herokuapp.com/mobileItems`)
           .then (res => res.json())
           .then(data => setMobile(data))
       },[])
@@ -32,7 +33,8 @@ const ManageMobile = () => {
                         </tr>
                     </thead>
                     {
-                        mobile.map(mobile =>  <ManageMobileTable mobile={mobile} />)
+                        mobile.length >0 ?  mobile.map(mobile =>  <ManageMobileTable mobile={mobile} />)
+                        :<img style={{width:'30%'}} className="text-center m-auto" src={spinner} alt=""/>   
                     }
                </Table>
                 </div>

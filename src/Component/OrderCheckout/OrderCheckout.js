@@ -17,7 +17,7 @@ const OrderCheckout = () => {
 //  console.log(name, price);
   
     useEffect(()=>{
-        const url= `http://localhost:5000/mobile/${id}`
+        const url= `https://bismillah-phone-farhan.herokuapp.com/mobile/${id}`
      //   console.log(url);
         fetch(url)
         .then(res => res.json())
@@ -27,7 +27,7 @@ const OrderCheckout = () => {
     const handleOrderCheckout = () => {
         const newOrder = {...loggedInUser, ...orderCheckout}
         console.log(newOrder);
-        fetch('http://localhost:5000/orderCheckout', {
+        fetch('https://bismillah-phone-farhan.herokuapp.com/orderCheckout', {
             method : 'POST',
             headers:{ 
                 'Content-Type': 'Application/json'
