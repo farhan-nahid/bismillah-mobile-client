@@ -35,4 +35,4 @@
 
 
 
-You can see client side code in [Bismillah-Mobile-Zone-server](https://github.com/Porgramming-Hero-web-course/full-stack-server-farhan-nahid)
+You can see server side code in [Bismillah-Mobile-Zone-server](https://github.com/Porgramming-Hero-web-course/full-stack-server-farhan-nahid)
