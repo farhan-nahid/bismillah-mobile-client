@@ -5,7 +5,6 @@ const ManageMobileTable = ({mobile}) => {
     const {name, configuration, price,_id} = mobile
 
     const handleDelete = (id,event) => {
-        console.log(event.target.parentNode);
         fetch(`https://bismillah-phone-farhan.herokuapp.com/delete/${id}`,{
             method : 'DELETE'
         })
@@ -15,6 +14,7 @@ const ManageMobileTable = ({mobile}) => {
                 event.target.parentNode.style.display="none"
             }
         })
+        window.alert("Successfully Deleted This Product Form Our Database")
     }
     
     return (

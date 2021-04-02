@@ -39,6 +39,7 @@ const OrderCheckout = () => {
         .then(data =>{
             console.log(data);
         })
+        window.alert("We Received Your Order Successfully")
     }
     return (
         <Container className="mt-5">

@@ -16,7 +16,6 @@ const AdminAddMobile = () => {
         image: imageURL
       }
       const url='https://bismillah-phone-farhan.herokuapp.com/adminAddMobile'
-      console.log(mobileData)
       fetch(url,{
         method: 'POST',
         headers:{
@@ -25,11 +24,11 @@ const AdminAddMobile = () => {
         body:JSON.stringify(mobileData)
       })
       .then(res=>console.log("server site", res))
+      window.alert("New Product Added In Our Database Successfully")
     };
 
 
     const handleImageUpload = event =>{
-      console.log(event.target.files[0]);
       const imageData = new FormData();
       imageData.set('key', 'dbe52342656cdfcd177dc7e9307e81c4');
       imageData.append('image', event.target.files[0])
