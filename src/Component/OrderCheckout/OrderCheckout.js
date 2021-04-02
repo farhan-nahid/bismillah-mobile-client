@@ -24,8 +24,12 @@ const OrderCheckout = () => {
         .then(data => setOrderCheckout(data))
     },[id])
 
+    
+
     const handleOrderCheckout = () => {
-        const newOrder = {...loggedInUser, ...orderCheckout}
+        const date =( new Date().toDateString('dd/mm/yyyy'))
+        console.log(date);
+        const newOrder = {...loggedInUser, ...orderCheckout, date}
         delete newOrder._id
         console.log(newOrder);
         fetch('https://bismillah-phone-farhan.herokuapp.com/orderCheckout', {

@@ -11,3 +11,27 @@
   width: 150px;
   object-fit: contain;
 }
+
+.details h5 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: 600;
+}
+
+.details h6 {
+  margin-top: 7px;
+  font-weight: 400;
+}
+
+.details .email {
+  margin-bottom: 15px;
+}
+
+.details span {
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+}
+
+.details span:hover {
+  cursor: pointer;
+}
