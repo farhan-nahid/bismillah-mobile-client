@@ -60,7 +60,7 @@ const AdminAddMobile = () => {
                         <input name="price" placeholder="Mobile Price" className="form-control" type="number" ref={register} />
                         <input name="image" type='file' className="form-control" onChange={handleImageUpload}/>      
                       </div>
-                  <input type="submit"  className="submit"  />
+                  <input type="submit" value="save"  className="submit float-right"  />
               </form>
             </Col>
          </Row>

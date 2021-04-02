@@ -10,7 +10,8 @@
   background-color: #28a745;
   border: 0;
   color: white;
-  margin-top: 20px;
+  border-radius: 5px;
+  margin-top: 7px;
 }
 
 input {

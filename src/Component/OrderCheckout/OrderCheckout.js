@@ -65,7 +65,7 @@ const OrderCheckout = () => {
                 </tr>
             </tbody>
             </Table>
-            <Button  variant="success"  className=" mt-4 justify-content-center" onClick ={handleOrderCheckout}>Checkout</Button>
+            <Button  variant="success"  className="mt-5 float-right" onClick ={handleOrderCheckout}>Checkout</Button>
             </div>
         </Container>
     );

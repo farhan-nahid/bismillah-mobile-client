@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col } from 'react-bootstrap';
+import cross from './img/cross-removebg-preview.png';
 import './SingleOrder.css';
 
 const SingleOrder = ({order}) => {
@@ -15,12 +16,13 @@ const SingleOrder = ({order}) => {
                 event.target.parentNode.style.display="none"
             }
         })
-        window.alert("Successfully Deleted This Product Form Our Database")
+        window.alert("Your Order is Canceled")
     }
 
 
     return (
-        <Col  lg={6}>
+        <Col  lg={5}  className="order-details">
+            <img src={cross} className="delete float-right " alt="..."  onClick={(event)=>handleDelete(_id,event)} />
             <div className="order">
                 <div className="img" >
                     <img  src={image} alt=""/>
@@ -30,7 +32,6 @@ const SingleOrder = ({order}) => {
                     <h6>Configuration : {configuration}</h6>
                     <h6>Date : {date}</h6>
                     <h6 className="email">Email : {email}</h6>
-                    <span className="bg-danger" onClick={(event)=>handleDelete(_id,event)}>Cancel Order</span>
                 </div>
             </div>  
          </Col>
